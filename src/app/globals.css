@@ -2,6 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Dark and Light mode */
+@layer base {
+  :root {
+    --text: #262626;
+    --background: #E4E2E2;
+    --primary: #2C5E2B;
+    --secondary: #43553A;
+    --accent: #CEDED3;
+  }
+  .dark {
+    --text: #D9D9D9;
+    --background: #1D1B1B;
+    --primary: #A2D4A1;
+    --secondary: #B3C5AA;
+    --accent: #213126;
+  }
+}
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
