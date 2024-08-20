@@ -17,7 +17,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className={`bg-background z-20 rounded-lg  ${isDarkMode ? "dark" : ""}`}>
+    <footer className={`bg-background z-20 rounded-lg lg:px-32  ${isDarkMode ? "dark" : ""}`}>
       <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <a
@@ -55,7 +55,7 @@ const Footer = () => {
         >
           Toggle Dark Mode
         </button>
-        <hr className="my-6 border-outline sm:mx-auto lg:my-8" />
+        <hr className="my-6 lg:border-none border-outline sm:mx-auto lg:my-8" />
         <span className="block text-sm text-outline sm:text-center">
           © 2024{" "}
           <a href="#" className="hover:underline">
