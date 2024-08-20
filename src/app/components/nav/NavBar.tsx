@@ -17,8 +17,8 @@ const NavBar = () => {
   return (
     <header className="absolute inset-x-0 top-0 z-50 lg:border-b-2 lg:px-40 border-text">
       <div className="relative">
-        <div className="w-1.5 h-1.5 bg-text absolute -bottom-1 -left-12"></div>
-        <div className="w-1.5 h-1.5 bg-text absolute -bottom-1 -right-12"></div>
+        <div className="w-1.5 h-1.5 bg-text absolute lg:-bottom-1 lg:-left-12"></div>
+        <div className="w-1.5 h-1.5 bg-text absolute lg:-bottom-1 lg:-right-12"></div>
 
         <nav
           aria-label="Global"
