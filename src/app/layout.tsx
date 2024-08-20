@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Lora, Raleway } from "next/font/google";
 import "./globals.css";
-import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 const lora = Lora({ subsets: ["latin"], weight: ["400", "700"], variable: "--font-lora" });
