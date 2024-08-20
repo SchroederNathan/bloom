@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        lora: ['Lora', 'serif'],
+        raleway: ['Raleway', 'sans-serif'],
+      },
       colors: {
         'text': 'var(--text)',
         'background': 'var(--background)',
