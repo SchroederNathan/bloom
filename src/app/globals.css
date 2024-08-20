@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* fonts */
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Raleway:wght@400;500;600;700');
-
-
 /* Dark and Light mode */
 @layer base {
   :root {

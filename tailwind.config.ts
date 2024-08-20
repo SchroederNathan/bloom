@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        lora: ['Lora', 'serif'],
-        raleway: ['Raleway', 'sans-serif'],
+        lora: ['var(--font-lora)'],
+        raleway: ['var(--font-raleway)'],
       },
       colors: {
         'text': 'var(--text)',
@@ -18,7 +18,7 @@ const config: Config = {
         'primary': 'var(--primary)',
         'secondary': 'var(--secondary)',
         'accent': 'var(--accent)',
-        'outline': 'A6A6A6',
+        'outline': '#A6A6A6',
        },
     },
   },
