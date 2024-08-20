@@ -1,3 +1,4 @@
+import Footer from "./components/footer/Footer";
 import NavBar from "./components/nav/NavBar";
 import Search from "./components/Search";
 
@@ -11,7 +12,7 @@ export default function Home() {
       <div className="relative isolate px-6 pt-14 lg:px-8">
         <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
           <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-            <div className="relative rounded-full text-[#262626]/60 px-3 py-1 leading-6 font-lora  ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+            <div className="relative rounded-full text-[#262626]/60 dark:text-[#D9D9D9]/60 dark:ring-[#D9D9D9]/20 dark:hover:ring-[#D9D9D9]/30 px-3 py-1 leading-6 font-lora  ring-1 ring-gray-900/10 hover:ring-gray-900/20">
               Share your design’s with the world.{"    "}
               <a href="#" className="ml-3 text-primary">
                 <span aria-hidden="true" className="absolute inset-0" />
@@ -30,6 +31,7 @@ export default function Home() {
           <Search />
         </div>
       </div>
+      <Footer/>
     </div>
   );
 }
