@@ -3,12 +3,13 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 import ThemeToggler from "../ThemeToggler";
 
 const navigation = [
-  { name: "Inspiration", href: "#" },
-  { name: "Create", href: "#" },
-  { name: "Colors", href: "#" },
+  { name: "Inspiration", href: "/" },
+  { name: "Create", href: "/create" },
+  { name: "Colors", href: "/colors" },
 ];
 
 const NavBar = () => {
@@ -31,14 +32,11 @@ const NavBar = () => {
         <div className="w-1.5 h-1.5 lg:bg-text absolute lg:-bottom-1 lg:-left-12"></div>
         <div className="w-1.5 h-1.5 lg:bg-text absolute lg:-bottom-1 lg:-right-12"></div>
 
-        <nav
-          aria-label="Global"
-          className="flex items-center justify-between p-6 lg:px-8"
-        >
+        <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5">
               <h1 className="text-text font-lora font-bold text-4xl">Bloom</h1>
-            </a>
+            </Link>
           </div>
           <div className="flex lg:hidden">
             <button
@@ -52,46 +50,32 @@ const NavBar = () => {
           </div>
           <div className="hidden lg:flex lg:gap-x-12">
             {navigation.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="text-sm font-semibold leading-6 text-text"
-              >
+              <Link key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-text">
                 {item.name}
-              </a>
+              </Link>
             ))}
-            <a
-              key="Go Pro"
-              href="#"
-              className="text-sm font-bold leading-6 text-primary "
-            >
+            <Link href="/pro" className="text-sm font-bold leading-6 text-primary">
               Go Pro
-            </a>
+            </Link>
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm font-semibold leading-6 text-text">
+            <Link href="/login" className="text-sm font-semibold leading-6 text-text">
               Log in <span aria-hidden="true">&rarr;</span>
-            </a>
+            </Link>
           </div>
         </nav>
 
         <Dialog
           open={mobileMenuOpen}
           onClose={handleClose}
-          className={`fixed inset-0 z-50 lg:hidden ${
-            mobileMenuOpen ? "pointer-events-auto" : "pointer-events-none"
-          }`}
+          className={`fixed inset-0 z-50 lg:hidden ${mobileMenuOpen ? "pointer-events-auto" : "pointer-events-none"}`}
         >
           <div className="fixed inset-0 z-50" />
-          <Dialog.Panel
-            className={`fixed shadow-2xl inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 transition-transform duration-500 ${animation}`}
-          >
+          <Dialog.Panel className={`fixed shadow-2xl inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 transition-transform duration-500 ${animation}`}>
             <div className="flex items-center justify-between">
-              <a href="#" className="-m-1.5 p-1.5">
-                <h1 className="text-text font-lora font-bold text-4xl">
-                  Bloom
-                </h1>
-              </a>
+              <Link href="/" className="-m-1.5 p-1.5">
+                <h1 className="text-text font-lora font-bold text-4xl">Bloom</h1>
+              </Link>
               <button
                 type="button"
                 onClick={handleClose}
@@ -105,31 +89,19 @@ const NavBar = () => {
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
                   {navigation.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-text font-lora hover:bg-accent"
-                    >
+                    <Link key={item.name} href={item.href} className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-text font-lora hover:bg-accent">
                       {item.name}
-                    </a>
+                    </Link>
                   ))}
-                  <a
-                    key="Go Pro"
-                    href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-primary font-lora hover:bg-accent"
-                  >
+                  <Link href="/pro" className="-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-primary font-lora hover:bg-accent">
                     Go Pro
-                  </a>
+                  </Link>
                   <ThemeToggler className="mt-3" />
-
                 </div>
                 <div className="py-6">
-                  <a
-                    href="#"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold font-lora leading-7 text-text hover:bg-accent"
-                  >
+                  <Link href="/login" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold font-lora leading-7 text-text hover:bg-accent">
                     Log in
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

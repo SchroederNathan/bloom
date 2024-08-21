@@ -1,6 +1,4 @@
-"use client";
 import React, { useState, useEffect } from "react";
-import ThemeToggler from "../ThemeToggler";
 
 const Footer = () => {
   return (
@@ -37,8 +35,7 @@ const Footer = () => {
           </ul>
         </div>
 
-        <ThemeToggler className="mt-3" />
-        
+
         <hr className="my-6 lg:border-none border-outline sm:mx-auto lg:my-8" />
         <span className="block text-sm text-outline sm:text-center">
           © 2024{" "}
