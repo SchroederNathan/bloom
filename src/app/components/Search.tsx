@@ -5,16 +5,13 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import Chip from "./chips/Chip";
 
+// Temporary data for chips
 const chips = [
-  {
-    name: "Web Design",
-  },
-  { name: "UI/UX Design" },
-  { name: "Graphic Design" },
-  { name: "Illustration" },
-//   { name: "Photography" },
-  { name: "Animation" },
-//   { name: "3D Modeling" },
+  { id: 1, name: "Web Design" },
+  { id: 2, name: "UI/UX Design" },
+  { id: 3, name: "Graphic Design" },
+  { id: 4, name: "Illustration" },
+  { id: 5, name: "Animation" },
 ];
 
 export default function Search() {
@@ -31,9 +28,9 @@ export default function Search() {
         <MagnifyingGlassIcon className="size-6 text-text absolute right-4 top-2 group-hover/search:-rotate-12 transition-transform" />
       </Field>
       <div className="flex flex-wrap gap-x-3 gap-y-3 justify-center">
-      {chips.map((chip) => (
-        <Chip key={chip.name} name={chip.name} />
-      ))}
+        {chips.map((chip) => (
+          <Chip key={chip.id} id={chip.id} name={chip.name} /> // pass id and name as props to chip
+        ))}
       </div>
     </>
   );

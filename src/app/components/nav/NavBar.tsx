@@ -8,7 +8,6 @@ const navigation = [
   { name: "Inspiration", href: "#" },
   { name: "Create", href: "#" },
   { name: "Colors", href: "#" },
-  { name: "Go Pro", href: "#" },
 ];
 
 const NavBar = () => {
@@ -60,12 +59,16 @@ const NavBar = () => {
                 {item.name}
               </a>
             ))}
+            <a
+              key="Go Pro"
+              href="#"
+              className="text-sm font-bold leading-6 text-primary "
+            >
+              Go Pro
+            </a>
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a
-              href="#"
-              className="text-sm font-semibold leading-6 text-text"
-            >
+            <a href="#" className="text-sm font-semibold leading-6 text-text">
               Log in <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
@@ -74,13 +77,19 @@ const NavBar = () => {
         <Dialog
           open={mobileMenuOpen}
           onClose={handleClose}
-          className={`fixed inset-0 z-50 lg:hidden ${mobileMenuOpen ? "pointer-events-auto" : "pointer-events-none"}`}
+          className={`fixed inset-0 z-50 lg:hidden ${
+            mobileMenuOpen ? "pointer-events-auto" : "pointer-events-none"
+          }`}
         >
           <div className="fixed inset-0 z-50" />
-          <Dialog.Panel className={`fixed shadow-2xl inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 transition-transform duration-500 ${animation}`}>
+          <Dialog.Panel
+            className={`fixed shadow-2xl inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 transition-transform duration-500 ${animation}`}
+          >
             <div className="flex items-center justify-between">
               <a href="#" className="-m-1.5 p-1.5">
-                <h1 className="text-text font-lora font-bold text-4xl">Bloom</h1>
+                <h1 className="text-text font-lora font-bold text-4xl">
+                  Bloom
+                </h1>
               </a>
               <button
                 type="button"
@@ -103,6 +112,13 @@ const NavBar = () => {
                       {item.name}
                     </a>
                   ))}
+                  <a
+                    key="Go Pro"
+                    href="#"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-bold leading-7 text-primary font-lora hover:bg-accent"
+                  >
+                    Go Pro
+                  </a>
                 </div>
                 <div className="py-6">
                   <a
