@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Dialog } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import ThemeToggler from "../ThemeToggler";
 
 const navigation = [
   { name: "Inspiration", href: "#" },
@@ -119,6 +120,8 @@ const NavBar = () => {
                   >
                     Go Pro
                   </a>
+                  <ThemeToggler className="mt-3" />
+
                 </div>
                 <div className="py-6">
                   <a
