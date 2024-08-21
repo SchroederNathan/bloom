@@ -1,23 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import ThemeToggler from "../ThemeToggler";
 
 const Footer = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [isDarkMode]);
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-  };
-
   return (
-    <footer className={`bg-background z-20 rounded-lg lg:px-32  ${isDarkMode ? "dark" : ""}`}>
+    <footer className="bg-background z-20 rounded-lg lg:px-32">
       <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div className="sm:flex sm:items-center sm:justify-between">
           <a
@@ -49,12 +36,9 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <button
-          onClick={toggleDarkMode}
-          className="mt-4 p-2 bg-accent text-text rounded"
-        >
-          Toggle Dark Mode
-        </button>
+
+        <ThemeToggler className="mt-3" />
+        
         <hr className="my-6 lg:border-none border-outline sm:mx-auto lg:my-8" />
         <span className="block text-sm text-outline sm:text-center">
           © 2024{" "}
