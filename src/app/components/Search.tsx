@@ -31,7 +31,7 @@ export default function Search() {
           placeholder="Explore Endless Creativity..."
           className={clsx(
             "block w-full rounded-full bg-background ring-1 ring-outline py-2 px-5 text-text placeholder:text-outline font-lora",
-            "focus:outline-none hover:ring-2"
+            "focus:outline-none lg:hover:ring-2"
           )}
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
