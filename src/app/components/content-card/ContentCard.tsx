@@ -13,7 +13,7 @@ const ContentCard = ({ imgUrl, userAvaterUrl }: ContentCardProps) => {
         <img src={imgUrl} alt="Card Image" className="w-full rounded-lg" />
         <div className="flex items-center mt-3">
           <img src={userAvaterUrl} className="w-8"/>
-          <p className="ml-3 font-lora text-base sm:text-lg">Nate S.</p>
+          <p className="ml-3 font-lora text-base text-text sm:text-lg">Nate S.</p>
         </div>
       </div>
     </div>
