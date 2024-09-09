@@ -26,17 +26,15 @@ export default function Home() {
           <Search />
         </div>
         {/* Content -- TODO: create filter buttons */}
-        <div className="mt-16 sm:mx-24">
-          <div className="bg-red-500 flex flex-wrap">
-            <ContentCard />
-            <ContentCard />
-            <ContentCard />
-            <ContentCard />
-            <ContentCard />
-            <ContentCard />
-            <ContentCard />
-            <ContentCard />
-            <ContentCard />
+        <div className="mt-16 lg:mx-24 md:mx-12">
+          <div className="flex flex-wrap">
+            <ContentCard userAvaterUrl="images/placeholderAvatar.png" imgUrl="images/placeholder.jpg"/>
+            <ContentCard userAvaterUrl="images/placeholderAvatar.png" imgUrl="images/placeholder.jpg"/>
+            <ContentCard userAvaterUrl="images/placeholderAvatar.png" imgUrl="images/placeholder.jpg"/>
+            <ContentCard userAvaterUrl="images/placeholderAvatar.png" imgUrl="images/placeholder.jpg"/>
+            <ContentCard userAvaterUrl="images/placeholderAvatar.png" imgUrl="images/placeholder.jpg"/>
+
+
 
           </div>
         </div>
