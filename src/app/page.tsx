@@ -73,7 +73,7 @@ export default function Home() {
           <Search />
         </div>
         {/* Content -- TODO: create filter buttons */}
-        <div className="mt-16 lg:mx-24 md:mx-12">
+        <div className="mt-6 lg:mx-24 md:mx-12">
           <FilterButton />
           <div className="flex flex-wrap -mx-4">
             {cards.map((card) => (

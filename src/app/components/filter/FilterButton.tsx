@@ -22,11 +22,10 @@ function FilterButton() {
   return (
     <div className="w-full flex justify-end">
       <Listbox value={selected} onChange={setSelected}>
-        {/* Wrap the button and options in a relative div */}
         <div className="relative mt-3">
           <ListboxButton
             className={clsx(
-              "text-left block w-fit font-lora appearance-none rounded border-none py-1.5 px-3 text-sm/6 pr-8 bg-background ring-1 ring-outline font-semibold text-text sm:hover:shadow-md transition-shadow duration-150"
+              "text-left block w-fit font-lora appearance-none rounded border-none py-1.5 px-3 text-sm/6 pr-8 bg-background ring-1 ring-outline font-semibold text-text sm:hover:shadow-md transition-shadow duration-100"
             )}
           >
             {selected.name}

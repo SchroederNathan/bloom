@@ -15,7 +15,7 @@ const Chip = ({
 
   return (
     <a key={id} className="cursor-pointer" onClick={() => handleChipClick(name)}>
-      <div className="rounded-full w-fit ring-1 ring-outline text-text font-lora px-3 lg:hover:ring-2">
+      <div className="rounded-full w-fit ring-1 ring-outline text-text font-lora px-3 lg:hover:ring-2 sm:hover:shadow-md transition-shadow duration-100">
         {name}
       </div>
     </a>
