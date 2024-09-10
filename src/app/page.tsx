@@ -1,5 +1,52 @@
 import ContentCard from "./components/content-card/ContentCard";
+import FilterButton from "./components/filter/FilterButton";
 import Search from "./components/Search";
+
+interface TempCardInterface {
+  featureImageUrl: string;
+  userName: string;
+  userAvatarUrl: string;
+  viewCount: number;
+  likeCount: number;
+}
+
+const cards: TempCardInterface[] = [
+  {
+    featureImageUrl: "images/placeholder.jpg",
+    userName: "Nate S.",
+    userAvatarUrl: "images/placeholderAvatar.png",
+    viewCount: 423,
+    likeCount: 45,
+  },
+  {
+    featureImageUrl: "images/placeholder.jpg",
+    userName: "Johnathon",
+    userAvatarUrl: "images/placeholderAvatar.png",
+    viewCount: 1083,
+    likeCount: 107,
+  },
+  {
+    featureImageUrl: "images/placeholder.jpg",
+    userName: "Kevin Durant",
+    userAvatarUrl: "images/placeholderAvatar.png",
+    viewCount: 804,
+    likeCount: 234,
+  },
+  {
+    featureImageUrl: "images/placeholder.jpg",
+    userName: "John Pork",
+    userAvatarUrl: "images/placeholderAvatar.png",
+    viewCount: 10987,
+    likeCount: 250,
+  },
+  {
+    featureImageUrl: "images/placeholder.jpg",
+    userName: "Benjamin",
+    userAvatarUrl: "images/placeholderAvatar.png",
+    viewCount: 784,
+    likeCount: 350,
+  },
+];
 
 export default function Home() {
   return (
@@ -27,15 +74,17 @@ export default function Home() {
         </div>
         {/* Content -- TODO: create filter buttons */}
         <div className="mt-16 lg:mx-24 md:mx-12">
-          <div className="flex flex-wrap">
-            <ContentCard userAvaterUrl="images/placeholderAvatar.png" imgUrl="images/placeholder.jpg"/>
-            <ContentCard userAvaterUrl="images/placeholderAvatar.png" imgUrl="images/placeholder.jpg"/>
-            <ContentCard userAvaterUrl="images/placeholderAvatar.png" imgUrl="images/placeholder.jpg"/>
-            <ContentCard userAvaterUrl="images/placeholderAvatar.png" imgUrl="images/placeholder.jpg"/>
-            <ContentCard userAvaterUrl="images/placeholderAvatar.png" imgUrl="images/placeholder.jpg"/>
-
-
-
+          <FilterButton />
+          <div className="flex flex-wrap -mx-4">
+            {cards.map((card) => (
+              <ContentCard
+                userName={card.userName}
+                userAvaterUrl={card.userAvatarUrl}
+                imgUrl={card.featureImageUrl}
+                viewCount={card.viewCount}
+                likeCount={card.likeCount}
+              />
+            ))}
           </div>
         </div>
       </div>
