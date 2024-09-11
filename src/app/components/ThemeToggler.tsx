@@ -1,4 +1,5 @@
 import { Switch } from "@headlessui/react";
+import { MoonIcon, SunIcon } from "@heroicons/react/16/solid";
 import { useEffect, useState } from "react";
 
 export default function ThemeToggler({ className }: { className?: string }) {
@@ -22,6 +23,8 @@ export default function ThemeToggler({ className }: { className?: string }) {
         aria-hidden="true"
         className="pointer-events-none inline-block size-5 translate-x-0 rounded-full bg-background ring-0 shadow-lg transition duration-200 ease-in-out group-data-[checked]:translate-x-7"
       />
+      <MoonIcon className="text-background size-5 mx-auto -mr-[0.5px]"/>
+      <SunIcon className="text-background size-5 absolute "/>
     </Switch>
   );
 }
