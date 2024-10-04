@@ -8,8 +8,8 @@ import { createClient } from "./client"; // Make sure this path is correct
 // }
 
 interface AuthStore {
-  user: User | null;
-  setUser: (user: User | null) => void;
+  user: any | null;
+  setUser: (user: any | null) => void;
   logout: () => Promise<void>;
 }
 
