@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
-import { Dialog, DialogPanel } from "@headlessui/react";
+import { checkUser } from "@/utils/supabase/auth";
+import useAuthStore from "@/utils/supabase/auth-store"; // Import Zustand store for user authentication
+import { Button, Dialog, DialogPanel } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import ThemeToggler from "../ThemeToggler";
 
 const navigation = [
@@ -16,6 +18,8 @@ const NavBar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [animation, setAnimation] = useState("");
 
+  const { user, setUser, logout } = useAuthStore();
+
   const handleOpen = () => {
     setAnimation("animate-slideIn");
     setMobileMenuOpen(true);
@@ -26,12 +30,32 @@ const NavBar = () => {
     setTimeout(() => setMobileMenuOpen(false), 500); // Match the animation duration
   };
 
+  const handleLogout = async () => {
+    // toggle the modal
+    handleClose();
+    await logout();
+  };
+
+  const handleLogin = () => {
+    handleClose();
+  };
+
+  useEffect(() => {
+    const checkAuthStatus = async () => {
+      try {
+        const user = await checkUser(); // Fetch user authentication status
+        setUser(user); // Update Zustand store with the user
+      } catch (error) {
+        console.error("Error checking user:", error);
+      }
+    };
+
+    checkAuthStatus(); // Call the async function inside useEffect
+  }, [setUser]); // Run once on mount
+
   return (
     <header className="absolute inset-x-0 top-0 z-50 lg:border-b-2 lg:px-40 border-text">
       <div className="relative">
-        <div className="w-1.5 h-1.5 lg:bg-text absolute lg:-bottom-1 lg:-left-12"></div>
-        <div className="w-1.5 h-1.5 lg:bg-text absolute lg:-bottom-1 lg:-right-12"></div>
-
         <nav
           aria-label="Global"
           className="flex items-center justify-between p-6 lg:px-8"
@@ -69,12 +93,21 @@ const NavBar = () => {
             </Link>
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <Link
-              href="/login"
-              className="text-sm font-semibold leading-6 text-text"
-            >
-              Log in <span aria-hidden="true">&rarr;</span>
-            </Link>
+            {user ? (
+              <button
+                onClick={handleLogout}
+                className="text-sm font-semibold leading-6 text-text"
+              >
+                Log out <span aria-hidden="true">&rarr;</span>
+              </button>
+            ) : (
+              <Link
+                href="/login"
+                className="text-sm font-semibold leading-6 text-text"
+              >
+                Log in <span aria-hidden="true">&rarr;</span>
+              </Link>
+            )}
           </div>
         </nav>
 
@@ -124,13 +157,23 @@ const NavBar = () => {
                   </Link>
                   <ThemeToggler className="mt-3" />
                 </div>
-                <div className="py-6">
-                  <Link
-                    href="/login"
-                    className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold font-lora leading-7 text-text hover:bg-accent"
-                  >
-                    Log in
-                  </Link>
+                <div className="py-6 w-100">
+                  {user ? (
+                    <Button
+                      onClick={handleLogout}
+                      className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold font-lora leading-7 text-text hover:bg-accent w-full text-start"
+                    >
+                      Log out
+                    </Button>
+                  ) : (
+                    <Link
+                      href="/login"
+                      onClick={handleLogin}
+                      className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold font-lora leading-7 text-text hover:bg-accent"
+                    >
+                      Log in
+                    </Link>
+                  )}
                 </div>
               </div>
             </div>

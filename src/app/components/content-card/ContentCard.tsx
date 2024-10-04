@@ -35,8 +35,8 @@ const ContentCard = ({
                 {viewCount}
               </p>
             </div>
-            <div className="flex flex-row gap-1 items-center">
-              <HeartIcon strokeWidth={2} className="text-outline w-5 h-5" />
+            <div className="flex flex-row gap-1 items-center group/like">
+              <HeartIcon strokeWidth={2} className="text-outline w-5 h-5 hover/like:fill-primary hover/like:text-primary" />
               <p className="font-lora text-base sm:text-lg text-outline">
                 {likeCount}
               </p>
